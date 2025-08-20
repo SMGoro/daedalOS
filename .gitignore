@@ -4,11 +4,6 @@
 certificates
 out
 
-yarn-lock.json
-package-lock.json
-pnpm-lock.yaml
-next-env.d.ts
-
 node_modules
 
 test-results
