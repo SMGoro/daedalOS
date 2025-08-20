@@ -12,7 +12,7 @@
     "defaults and supports es6 and not ie 11 and >1%"
   ],
   "scripts": {
-    "build": "yarn build:prebuild && next build",
+    "build": "yarn build:prebuild && next build && node scripts/copyPages.js",
     "build:bundle-analyzer": "yarn build",
     "build:fs": "node scripts/fs2json.js --exclude .index --out public/.index/fs.9p.json ./public",
     "build:minify": "node scripts/minifyHtml.js && node scripts/minifyJs.js",
