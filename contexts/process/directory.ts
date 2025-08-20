@@ -67,6 +67,17 @@ const directory: Processes = {
     singleton: true,
     title: "DevTools",
   },
+  Eaglercraft: {
+    Component: dynamic(() => import("components/apps/Eaglercraft")),
+    backgroundColor: "#000",
+    defaultSize: {
+      height: 600,
+      width: 800,
+    },
+    icon: "/System/Icons/eaglercraft.webp",
+    libs: ["/Program Files/Browser/eaglercraft/index.html"],
+    title: "Eaglercraft",
+  },
   Emulator: {
     Component: dynamic(() => import("components/apps/Emulator")),
     backgroundColor: "#000",
@@ -341,6 +352,17 @@ const directory: Processes = {
     icon: "/System/Icons/tinymce.webp",
     libs: ["/Program Files/TinyMCE/tinymce.min.js"],
     title: "TinyMCE",
+  },
+  Touhou: {
+    Component: dynamic(() => import("components/apps/Touhou")),
+    backgroundColor: "#000",
+    defaultSize: {
+      height: 600,
+      width: 800,
+    },
+    icon: "/System/Icons/touhou.webp",
+    libs: ["/Program Files/Touhou/index.html"],
+    title: "Touhou",
   },
   Transfer: {
     Component: dynamic(() => import("components/system/Dialogs/Transfer")),

@@ -266,7 +266,14 @@ export const START_MENU_FOLDERS = {
     /^Ruffle$/,
     /^Virtual x86$/,
   ],
-  Games: [/^ClassiCube$/, /^DX-Ball$/, /^Quake III Arena$/, /^Space Cadet$/],
+  Games: [
+    /^ClassiCube$/,
+    /^DX-Ball$/,
+    /^Eaglercraft$/,
+    /^Quake III Arena$/,
+    /^Space Cadet$/,
+    /^Touhou$/,
+  ],
 };
 
 export const TEST_APP_CONTAINER_APP = "Marked";

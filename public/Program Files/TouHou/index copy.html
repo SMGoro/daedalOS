@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<title>DOSBox-X on Emscripten</title>
+	</head>
+	<body>
+		<h1>yksoft1's github.io page</h1>
+		<h2>DOSBox-X on Emscripten</h2>
+		<p>
+			Based on dreamlayers'<a href="https://github.com/dreamlayers/em-dosbox">em-dosbox</a>, I made my fork of joncampbell123's <a href="https://github.com/joncampbell123/dosbox-x/">DOSBox-X</a> buildable on Emscripten.<br />
+			<a href="https://github.com/yksoft1/dosbox-x-vanilla-sdl/tree/emscripten">Emscripten branch in my repo</a><br />
+			For some reason, <a href="https://github.com/kripken/emscripten/issues/7123">asm2wasm doesn't like -O3 for my build with Emtepretify on</a>. So the PC-98 game demos below run with slow graphics, not suitable for Danmaku shooting.<br />
+			Demos now all use fixed cycles=12000. If you feel the CPU usage is too low, push F9+Shift+"+" to speed up. <br />
+			New: <a href="https://github.com/WebAssembly/binaryen/commit/403be53fb84645b9338454681792538af876cf87">asm2wasm problem fixed</a>. Thank you kripken! now Emtepretified builds are also -O3.<br>
+			Emtepretified builds (more stable, can run the DOS shell and .BAT files but slower)<br />
+			<a href="th2e/th2e.html">Demo 1: Touhou 2 Touhou-Fuumaroku</a><br />
+			<a href="th4e/th4e.html">Demo 2: Touhou 4 Touhou-Gensokyou</a><br />
+			<a href="th5e/th5e.html">Demo 3: Touhou 5 Touhou-Kaikidan</a><br />
+			<a href="th3e/th3e.html">Demo 4: Touhou 3 Touhou-Yumejikuu</a><br />
+			<s>Touhou 1's PSG noise channel sounds incorrect, but I will put it here as reference.</s> FIXED<br />
+			<a href="th1e/th1e.html">Demo 5: Touhou 1 Touhou-Reiiden</a><br />
+			NEW: <a href="th2mt.html">Touhou 2 with Munt MT-32 MIDI music</a><br />
+			This requires a bit more CPU and RAM than those without MT-32 emulation.<br />
+			<br />	
+			non-Emtepretified builds (faster, but less stable.)<br />
+			<a href="th1/th1.html">Demo 5: Touhou 1 Touhou-Reiiden</a><br />
+			<a href="th2/th2.html">Demo 1: Touhou 2 Touhou-Fuumaroku</a><br />
+			<a href="th3/th3.html">Demo 4: Touhou 3 Touhou-Yumejikuu</a><br />
+			<a href="th4/th4.html">Demo 2: Touhou 4 Touhou-Gensokyou</a><br />
+			<a href="th5/th5.html">Demo 3: Touhou 5 Touhou-Kaikidan</a><br />
+			<br />
+			
+			<span>DOSBox-X with Emularity frontend. SDL2 build without mobile support.</span><br />
+			<span><a href="/emularity/th5.html">Touhou 5 Touhou-Kaikidan</a></span><br />
+			<span><a href="/emularity/fzk.html">Flame Zapper Kotsujin</a></span><br />
+			<span><a href="/emularity/th1.html">NEW: Touhou 1 Touhou-Reiiden</a><br /></span><br />
+			<span>DOSBox-X with Emularity frontend, built with Emscripten SDL1. With mobile support.</span><br />
+			<span><a href="/emularity/th5sdl1.html">Touhou 5 Touhou-Kaikidan</a></span><br />
+			<span><a href="/emularity/th1sdl1.html">Touhou 1 Touhou-Reiiden</a></span><br />
+			<span><a href="/emularity/fzksdl1.html">Flame Zapper Kotsujin</a></span><br /><br />
+			<span>NEW: Some demos had got some mobile support such as a software keypad.</span><br />
+			<div>
+			Only tested in Firefox 52, 60 ESR and Chromium 61, 69 (64-bit native on Windows 8.1, AMD HD6750). <br />
+			Also tested on Firefox 52, 32-bit Windows XP.<br />
+			May not run well on other platforms.<br />
+			Demos require WebAssembly.<br />	
+			Touhou PC-98 series (C) ZUN SOFT / Touhou Project 1996-1999.<br />
+			Flame Zapper Kotsujin (C) CO2-PRO.
+			</div>
+		</p>	
+	</body>
+</html>

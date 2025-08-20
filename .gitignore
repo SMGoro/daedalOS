@@ -1,5 +1,6 @@
 .next
 .swc
+.DS_Store
 certificates
 out
 
