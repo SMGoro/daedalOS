@@ -75,7 +75,7 @@ const directory: Processes = {
       width: 800,
     },
     icon: "/System/Icons/eaglercraft.webp",
-    libs: ["/Program Files/Browser/eaglercraft/index.html"],
+    libs: ["/Program Files/EaglerCraft/index.html"],
     title: "Eaglercraft",
   },
   Emulator: {
@@ -432,3 +432,4 @@ const directory: Processes = {
 };
 
 export default directory;
+

@@ -1,0 +1,184 @@
+{
+  "versions": [
+    {
+        "id": "wehou_demo8",
+        "name": "WeHou Demo8",
+        "description": "东方绀珠传AEX",
+        "tag": "推荐",
+        "tagColor": "bg-green-600",
+        "iconColor": "text-green-500",
+        "url": "WeHou/demo8/index.html",
+        "features": [
+            "手机触屏适配"
+        ]
+    },
+    {
+        "id": "wehou_demo7",
+        "name": "WeHou Demo7",
+        "description": "狸舞賀春短劇",
+        "tag": "推荐",
+        "tagColor": "bg-green-600",
+        "iconColor": "text-green-500",
+        "url": "WeHou/demo7/index.html",
+        "features": [
+            "手机触屏适配"
+        ]
+    },
+    {
+        "id": "wehou_demo6",
+        "name": "WeHou Demo6",
+        "description": "秦心符卡STG化複刻",
+        "tag": "推荐",
+        "tagColor": "bg-green-600",
+        "iconColor": "text-green-500",
+        "url": "WeHou/demo6/index.html",
+        "features": [
+            "手机触屏适配"
+        ]
+    },
+    {
+        "id": "wehou_demo5",
+        "name": "WeHou Demo5",
+        "description": "幻想格林尼治",
+        "tag": "推荐",
+        "tagColor": "bg-green-600",
+        "iconColor": "text-green-500",
+        "url": "WeHou/demo5/index.html",
+        "features": [
+            "手机触屏适配"
+        ]
+    },
+    {
+        "id": "wehou_demo4",
+        "name": "WeHou Demo4",
+        "description": "曲綫激光祭",
+        "tag": "推荐",
+        "tagColor": "bg-green-600",
+        "iconColor": "text-green-500",
+        "url": "WeHou/demo4/index.html",
+        "features": [
+            "手机触屏适配"
+        ]
+    },
+    {
+      "id": "th1",
+      "name": "Touhou 1",
+      "description": "东方灵异传",
+      "tag": "推荐",
+      "tagColor": "bg-green-600",
+      "iconColor": "text-green-500",
+      "url": "th1/th1.html",
+      "features": [
+        "手机触屏适配"
+      ]
+    },
+    {
+      "id": "th2",
+      "name": "Touhou 2",
+      "description": "东方封魔录",
+      "tag": "推荐",
+      "tagColor": "bg-green-600",
+      "iconColor": "text-green-500",
+      "url": "th2/th2.html",
+      "features": [
+        "手机触屏适配"
+      ]
+    },
+    {
+      "id": "th3",
+      "name": "Touhou 3",
+      "description": "东方梦时空",
+      "tag": "推荐",
+      "tagColor": "bg-green-600",
+      "iconColor": "text-green-500",
+      "url": "th3/th3.html",
+      "features": [
+        "手机触屏适配"
+      ]
+    },
+    {
+      "id": "th4",
+      "name": "Touhou 4",
+      "description": "东方幻想乡",
+      "tag": "推荐",
+      "tagColor": "bg-green-600",
+      "iconColor": "text-green-500",
+      "url": "th4/th4.html",
+      "features": [
+        "手机触屏适配"
+      ]
+    },
+    {
+      "id": "th5",  
+      "name": "Touhou 5",
+      "description": "东方怪绮谈",
+      "tag": "推荐",
+      "tagColor": "bg-green-600",
+      "iconColor": "text-green-500",
+      "url": "th5/th5.html",
+      "features": [
+        "手机触屏适配"
+      ]
+    },
+    {
+      "id": "th2mt",
+      "name": "Touhou 2MT",
+      "description": "东方封魔录MT",
+      "tag": "推荐",
+      "tagColor": "bg-green-600",
+      "iconColor": "text-green-500",
+      "url": "th2mt/th2mt.html",
+      "features": [
+        "手机触屏适配"
+      ]
+    },
+    {
+      "id": "th5e", 
+      "name": "Touhou 5E",
+      "description": "东方怪绮谈E",
+      "tag": "推荐",
+      "tagColor": "bg-green-600",
+      "iconColor": "text-green-500",
+      "url": "th5e/th5e.html",
+      "features": [
+        "手机触屏适配"
+      ]
+    },
+    {
+      "id": "th4e",
+      "name": "Touhou 4E",
+      "description": "东方幻想乡E",
+      "tag": "推荐",
+      "tagColor": "bg-green-600",
+      "iconColor": "text-green-500",
+      "url": "th4e/th4e.html",
+      "features": [
+        "手机触屏适配"
+      ]
+    },
+    {
+      "id": "th3e",
+      "name": "Touhou 3E",
+      "description": "东方梦时空E",
+      "tag": "推荐",
+      "tagColor": "bg-green-600",
+      "iconColor": "text-green-500",
+      "url": "th3e/th3e.html",
+      "features": [
+        "手机触屏适配"
+      ]
+    },
+    {
+      "id": "th1e",
+      "name": "Touhou 1E",
+      "description": "东方灵异传E",
+      "tag": "推荐",
+      "tagColor": "bg-green-600",
+      "iconColor": "text-green-500",
+      "url": "th1e/th1e.html",
+      "features": [
+        "手机触屏适配"
+      ]
+    }
+  ]
+}

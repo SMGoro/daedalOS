@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eaglercraft - Minecraft Web Client</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'minecraft-green': '#54c754',
+                        'minecraft-dark': '#1e1e1e',
+                        'minecraft-gray': '#2d2d2d',
+                        'minecraft-light-gray': '#404040'
+                    },
+                    fontFamily: {
+                        'minecraft': ['Minecraft', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap'); */
+        
+        .minecraft-gradient {
+            background: linear-gradient(135deg, #54c754 0%, #4a9c4a 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .version-card {
+            background: linear-gradient(145deg, #2d2d2d, #1e1e1e);
+            border: 1px solid #404040;
+        }
+        
+        .play-button {
+            background: linear-gradient(135deg, #54c754 0%, #4a9c4a 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .play-button:hover {
+            background: linear-gradient(135deg, #4a9c4a 0%, #3d7a3d 100%);
+            transform: scale(1.05);
+        }
+        
+        .minecraft-text {
+            text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-minecraft-dark text-white font-['Inter'] min-h-screen">
+    <!-- Header -->
+    <header class="bg-minecraft-gray border-b border-minecraft-light-gray">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 bg-minecraft-green rounded-lg flex items-center justify-center">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 2L3 7v11h14V7l-7-5zM10 16l-6-4V8l6 4v4zm6-4l-6 4V12l6-4v4z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold text-minecraft-green minecraft-text">Eaglercraft</h1>
+                        <p class="text-gray-400 text-sm">Minecraft Web Client</p>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <p class="text-gray-400 text-sm">基于 WebAssembly</p>
+                    <p class="text-gray-500 text-xs">无需下载，即开即玩</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12">
+        <!-- Hero Section -->
+        <div class="text-center mb-16">
+            <h2 class="text-5xl font-bold text-minecraft-green minecraft-text mb-4">
+                选择你的 Minecraft 版本
+            </h2>
+            <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+                在浏览器中体验经典的 Minecraft 游戏，支持多个版本，无需安装任何软件
+            </p>
+        </div>
+
+        <!-- Version Cards -->
+        <div id="version-cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <!-- 版本卡片将通过 JavaScript 动态生成 -->
+        </div>
+
+        <!-- Features Section -->
+        <div class="mt-20 text-center">
+            <h3 class="text-3xl font-bold text-white mb-8">为什么选择 Eaglercraft？</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-minecraft-green rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-semibold text-white mb-2">无需下载</h4>
+                    <p class="text-gray-400">基于 WebAssembly 技术，直接在浏览器中运行，无需安装任何软件</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-minecraft-green rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-semibold text-white mb-2">高性能</h4>
+                    <p class="text-gray-400">优化的 WebAssembly 实现，提供接近原版的游戏性能</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-minecraft-green rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-semibold text-white mb-2">多人游戏</h4>
+                    <p class="text-gray-400">支持连接到 Minecraft 服务器，与朋友一起游戏</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-minecraft-gray border-t border-minecraft-light-gray mt-20">
+        <div class="container mx-auto px-6 py-8">
+            <div class="text-center text-gray-400">
+                <p class="mb-2">Eaglercraft - Minecraft Web Client</p>
+                <p class="text-sm">基于 WebAssembly 技术，让 Minecraft 在浏览器中运行</p>
+                <div class="mt-4 flex justify-center space-x-4 text-sm">
+                    <span>© 2024 Eaglercraft</span>
+                    <span>•</span>
+                    <span>Powered by WebAssembly</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 版本信息 JSON 数据
+        let versionsData = {
+            "versions": []
+        };
+
+        // 从外部 JSON 文件加载版本数据
+        async function loadVersionsData() {
+            try {
+                const response = await fetch('versions.json');
+                if (response.ok) {
+                    versionsData = await response.json();
+                } else {
+                    console.error('Failed to load versions.json');
+                    // 使用默认数据作为后备
+                    versionsData = {
+  "versions": [
+    {
+      "id": "1.8.8",
+      "name": "Minecraft 1.8.8",
+      "description": "最稳定的版本，支持大部分服务器和模组",
+      "tag": "推荐",
+      "tagColor": "bg-green-600",
+      "iconColor": "text-green-500",
+      "url": "./games/1.8.8_wasm.html",
+      "features": [
+        "服务器兼容性最佳",
+        "性能优化",
+        "多人游戏支持"
+      ]
+    },
+    {
+      "id": "1.8.8-wasm",
+      "name": "Minecraft 1.8.8 WASM",
+      "description": "WebAssembly 优化版本，性能更佳",
+      "tag": "高性能",
+      "tagColor": "bg-purple-600",
+      "iconColor": "text-purple-500",
+      "url": "./games/1.8.8_wasm.html",
+      "features": [
+        "WebAssembly 优化",
+        "更快的加载速度",
+        "更好的内存管理"
+      ]
+    },
+    {
+      "id": "1.8.8-classic",
+      "name": "Minecraft 1.8.8 经典版",
+      "description": "经典 Eaglercraft 版本",
+      "tag": "经典",
+      "tagColor": "bg-blue-600",
+      "iconColor": "text-blue-500",
+      "url": "./games/1.8.8.html",
+      "features": [
+        "经典体验",
+        "稳定运行",
+        "广泛兼容"
+      ]
+    },
+    {
+      "id": "1.12.2",
+      "name": "Minecraft 1.12.2",
+      "description": "模组支持最丰富的版本，适合单机游戏",
+      "tag": "模组",
+      "tagColor": "bg-indigo-600",
+      "iconColor": "text-indigo-500",
+      "url": "./games/1.12.2_wasm.html",
+      "features": [
+        "模组生态丰富",
+        "新特性支持",
+        "单机游戏体验"
+      ]
+    },
+    {
+      "id": "1.5.2",
+      "name": "Minecraft 1.5.2",
+      "description": "经典怀旧版本，体验最初的 Minecraft",
+      "tag": "怀旧",
+      "tagColor": "bg-yellow-600",
+      "iconColor": "text-yellow-500",
+      "url": "./games/1.5.2.html",
+      "features": [
+        "经典游戏体验",
+        "轻量级运行",
+        "怀旧服务器支持"
+      ]
+    },
+    {
+      "id": "pixelclient-1.8.8",
+      "name": "PixelClient 1.8.8",
+      "description": "PixelClient 客户端，支持更多功能",
+      "tag": "客户端",
+      "tagColor": "bg-pink-600",
+      "iconColor": "text-pink-500",
+      "url": "./games/PixelClient_1.8.8wasm.html",
+      "features": [
+        "增强功能",
+        "更好的界面",
+        "客户端优化"
+      ]
+    },
+    {
+      "id": "b1.7.3",
+      "name": "Minecraft Beta 1.7.3",
+      "description": "Beta 版本，体验早期 Minecraft",
+      "tag": "Beta",
+      "tagColor": "bg-orange-600",
+      "iconColor": "text-orange-500",
+      "url": "./games/b1.7.3.html",
+      "features": [
+        "Beta 版本体验",
+        "早期游戏机制",
+        "历史版本"
+      ]
+    },
+    {
+      "id": "b1.3",
+      "name": "Minecraft Beta 1.3",
+      "description": "更早期的 Beta 版本",
+      "tag": "远古",
+      "tagColor": "bg-red-600",
+      "iconColor": "text-red-500",
+      "url": "./games/b1.3.html",
+      "features": [
+        "最早期版本",
+        "原始游戏机制",
+        "历史收藏"
+      ]
+    },
+    {
+      "id": "1.2.5",
+      "name": "Minecraft 1.2.5",
+      "description": "1.2.5 版本，经典稳定版",
+      "tag": "经典",
+      "tagColor": "bg-teal-600",
+      "iconColor": "text-teal-500",
+      "url": "./games/1.2.5.html",
+      "features": [
+        "经典版本",
+        "稳定运行",
+        "怀旧体验"
+      ]
+    },
+    {
+      "id": "a1.2.6",
+      "name": "Minecraft Alpha 1.2.6",
+      "description": "Alpha 版本，最早期体验",
+      "tag": "Alpha",
+      "tagColor": "bg-gray-600",
+      "iconColor": "text-gray-500",
+      "url": "./games/a1.2.6.html",
+      "features": [
+        "Alpha 版本",
+        "最早期体验",
+        "历史价值"
+      ]
+    },
+    {
+      "id": "c0.30",
+      "name": "Minecraft Classic 0.30",
+      "description": "Classic 版本，最原始的 Minecraft",
+      "tag": "Classic",
+      "tagColor": "bg-amber-600",
+      "iconColor": "text-amber-500",
+      "url": "./games/c0.30wasm.html",
+      "features": [
+        "Classic 版本",
+        "最原始体验",
+        "网页版起源"
+      ]
+    }
+  ]
+};
+                }
+            } catch (error) {
+                console.error('Error loading versions data:', error);
+            }
+        }
+
+        // 生成版本卡片的函数
+        function generateVersionCards() {
+            const container = document.getElementById('version-cards');
+            
+            versionsData.versions.forEach(version => {
+                const card = document.createElement('div');
+                card.className = 'version-card rounded-xl p-6 card-hover';
+                
+                card.innerHTML = `
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="${version.tagColor} text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            ${version.tag}
+                        </div>
+                        <div class="text-gray-400 text-sm">${version.id}</div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">${version.name}</h3>
+                    <p class="text-gray-400 mb-4">${version.description}</p>
+                    <div class="space-y-2 mb-6">
+                        ${version.features.map(feature => `
+                            <div class="flex items-center text-sm text-gray-300">
+                                <svg class="w-4 h-4 mr-2 ${version.iconColor}" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                ${feature}
+                            </div>
+                        `).join('')}
+                    </div>
+                    <a href="${version.url}" 
+                       class="play-button block w-full text-center py-3 px-6 rounded-lg font-semibold text-white">
+                        开始游戏
+                    </a>
+                `;
+                
+                container.appendChild(card);
+            });
+        }
+
+        // 页面加载完成后执行
+        document.addEventListener('DOMContentLoaded', async function() {
+            // 加载版本数据
+            await loadVersionsData();
+            
+            // 生成版本卡片
+            generateVersionCards();
+            
+            // 为卡片添加点击效果
+            const cards = document.querySelectorAll('.version-card');
+            cards.forEach(card => {
+                card.addEventListener('click', function(e) {
+                    if (e.target.tagName !== 'A') {
+                        const link = this.querySelector('a');
+                        if (link) {
+                            link.click();
+                        }
+                    }
+                });
+            });
+
+            // 添加加载动画
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+        });
+
+        // 导出版本数据供外部使用
+        window.EaglercraftVersions = versionsData;
+    </script>
+</body>
+</html>

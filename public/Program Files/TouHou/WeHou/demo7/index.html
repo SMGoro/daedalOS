@@ -7,6 +7,7 @@
 <script src="audio.min.js"></script>
 <script src="WehouCore.min.js"></script>
 <script src="WehouGame.min.js"></script>
+<script src="../src/touch-controls.js"></script>
 </head>
 <body style='background-color:#999'>
 <div id="getsize"style='position:fixed;top:0;left:0;height:100%'></div>
@@ -20,6 +21,8 @@
 </div>
 </body>
 <script type="text/javascript">
+// 初始化触屏控制
+if(window.TouchControls){window.TouchControls.init();}
 stats=new Stats();stats.domElement.style.position="fixed";stats.domElement.style.bottom="0px";stats.domElement.style.left="0px";stats.domElement.style.zIndex=100;document.body.appendChild(stats.domElement);var vec2=function(a,b){return new THREE.Vector2(a,b)};var vec3=function(a,c,b){return new THREE.Vector3(a,c,b)};WEHOUGAME.bg={};WEHOUGAME.bg.renderer=new THREE.WebGLRenderer({antialias:true});WEHOUGAME.bg.renderer.setSize(WEHOUCORE.w,WEHOUCORE.h);WEHOUGAME.bg.bcamera=new THREE.PerspectiveCamera(35,4/3,1,25000);WEHOUGAME.bg.bcamera.position.set(0,-160,30);WEHOUGAME.bg.bscene=new THREE.Scene();var initbg=function(){var f=new THREE.PlaneGeometry(200,500,0,0);var d=new THREE.PlaneGeometry(400,500,0,0);var a=THREE.ImageUtils.loadTexture(WEHOUCORE.regimg("img/stage01a.jpg"));a.anisotropy=WEHOUGAME.bg.renderer.getMaxAnisotropy();a.wrapS=a.wrapT=THREE.RepeatWrapping;a.repeat.set(2,5);var b=new THREE.MeshBasicMaterial({map:a});b.transparent=true;b.opacity=1;b.blending=THREE.AdditiveBlending;var h=new THREE.Mesh(f,b);h.position.set(0,0,0);var e=THREE.ImageUtils.loadTexture(WEHOUCORE.regimg("img/stage01c.jpg"));e.anisotropy=WEHOUGAME.bg.renderer.getMaxAnisotropy();e.wrapS=e.wrapT=THREE.RepeatWrapping;e.repeat.set(8,10);var g=new THREE.MeshBasicMaterial({map:e});g.transparent=true;g.opacity=0.12;g.blending=THREE.AdditiveBlending;var c=new THREE.Mesh(d,g);c.position.set(0,50,-15);h.add(c);WEHOUGAME.bg.bscene.add(h);WEHOUGAME.bg.callback=function(i){h.position.y-=1;if(h.position.y<=-100){h.position.y=0}WEHOUGAME.bg.bcamera.position.x=Math.sin(i/100)*3+12;WEHOUGAME.bg.bcamera.lookAt({x:10,y:-106,z:0})}};initbg();
 </script>
 <script type="text/javascript">
